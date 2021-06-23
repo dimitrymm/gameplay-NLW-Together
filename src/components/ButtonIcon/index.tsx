@@ -20,7 +20,6 @@ export function ButtonIcon() {
 
             <Text style={styles.title}>
                 Entrar com Discord
-
             </Text>
         </TouchableOpacity>
 
