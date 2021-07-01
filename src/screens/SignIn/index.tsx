@@ -3,23 +3,24 @@ import {
     View,
     Text,
     Image,
-    StatusBar,
 } from "react-native";
 
 import { ButtonIcon } from "../../components/ButtonIcon";
 import IllustrationImg from '../../assets/illustration.png';
 import { styles } from './styles';
+import { useNavigation } from "@react-navigation/native";
+
 
 export function SignIn() {
-    const [text, setText] = useState('');
+    const navigation = useNavigation();
 
+    function handleSignIn(){
+        navigation.navigate('Home');
+    }
+    
     return (
         <View style={styles.container}>
-            <StatusBar
-                barStyle="light-content"
-                backgroundColor="transparent"
-                translucent
-            />
+           
 
             <Image
                 source={IllustrationImg}
@@ -39,8 +40,7 @@ export function SignIn() {
                 </Text>
 
                 <ButtonIcon 
-                    title="Entrar com o Discord"
-                    activeOpacity={0.7}
+                    title="Entrar com o Discord"                                onPress={handleSignIn}
                 />
 
             </View>
